@@ -69,7 +69,8 @@ class User extends Authenticatable
      */
     public function canExport(): bool
     {
-        return $this->hasRole(['super_admin', 'admin_program', 'admin_dapur']);
+        // Semua role (termasuk viewer) diizinkan untuk mengunduh laporan
+        return true;
     }
 
     public function getRoleLabelAttribute(): string
